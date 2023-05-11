@@ -18,7 +18,7 @@ const tokenCachedMiddleware = (req, res, next) => {
 
   const oneHourCandleCachedMiddleware = (req, res, next) => {
     try {
-      if (tokensCache.has("tokens")) {
+      if (tokensCache.has("oneHourCandle")) {
         return res.send(oneHourCache.get("oneHourCandle")).status(200);
       }
       return next();
@@ -30,7 +30,7 @@ const tokenCachedMiddleware = (req, res, next) => {
 
   const sixHourCandleCachedMiddleware = (req, res, next) => {
     try {
-      if (tokensCache.has("tokens")) {
+      if (tokensCache.has("sixHourCandle")) {
         return res.send(sixHoursCache.get("sixHourCandle")).status(200);
       }
       return next();
