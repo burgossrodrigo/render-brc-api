@@ -1,5 +1,5 @@
 const { tokensCache, oneHourCache, sixHoursCache } = require('../cache')
-const queryTokens = require('../methods/CRUD')
+const {queryTokens} = require('../methods/CRUD')
 const { oneHourCandleService, sixHourCandleService } = require('../service');
 
 const tokensController = async (req, res) => {
