@@ -17,7 +17,9 @@ const tokensController = async (req, res) => {
 
 const oneHourCandleController = async (req, res) => {
     try {
-        const data = await oneHourCandleService()
+        const name = req.params.token
+        console.log(name)
+        const data = await oneHourCandleService(name)
         oneHourCache.set("oneHourCandle", data);
         res.send(data);
         res.status(200);
@@ -30,7 +32,9 @@ const oneHourCandleController = async (req, res) => {
 
 const sixHourCandleController = async (req, res) => {
     try {
-        const data = await sixHourCandleService()
+        const name = req.params.token
+        console.log(name)
+        const data = await sixHourCandleService(name)
         sixHoursCache.set("sixHourCandle", data);
         res.send(data);
         res.status(200);
